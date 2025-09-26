@@ -88,16 +88,41 @@ export default function Cart() {
                         {it.qty} x ${it.price}
                       </div>
                     </div>
+                    <div>
+                      <button
+                        type="button"
+                        class="text-xs px-2 py-1 bg-red-600 text-white rounded"
+                        onClick={() => {
+                          const next = items.filter((x) =>
+                            x.id !== it.id
+                          );
+                          setItems(next);
+                          writeCart(next);
+                        }}
+                      >
+                        Remove
+                      </button>
+                    </div>
                   </div>
                 ))}
                 <div class="mt-2 font-semibold">Total: ${total.toFixed(2)}</div>
-                <div class="mt-2">
+                <div class="mt-2 flex gap-2">
                   <a
                     href="/checkout"
                     class="px-3 py-2 bg-sky-500 text-white rounded"
                   >
                     Checkout
                   </a>
+                  <button
+                    type="button"
+                    class="px-3 py-2 bg-red-600 text-white rounded"
+                    onClick={() => {
+                      setItems([]);
+                      writeCart([]);
+                    }}
+                  >
+                    Clear cart
+                  </button>
                 </div>
               </div>
             )}

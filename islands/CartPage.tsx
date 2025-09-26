@@ -68,9 +68,41 @@ export default function CartPage() {
                     {it.qty} x ${it.price}
                   </div>
                 </div>
+                <div>
+                  <button
+                    type="button"
+                    class="px-2 py-1 bg-red-600 text-white rounded"
+                    onClick={() => {
+                      const next = items.filter((x) => x.id !== it.id);
+                      setItems(next);
+                      try {
+                        localStorage.setItem(
+                          "techstore_cart",
+                          JSON.stringify(next),
+                        );
+                      } catch (_e) { /* ignore */ }
+                    }}
+                  >
+                    Remove
+                  </button>
+                </div>
               </div>
             ))}
             <div class="mt-4 font-semibold">Total: ${total.toFixed(2)}</div>
+            <div class="flex gap-2 mt-2">
+              <button
+                type="button"
+                class="px-3 py-2 bg-red-600 text-white rounded"
+                onClick={() => {
+                  setItems([]);
+                  try {
+                    localStorage.setItem("techstore_cart", JSON.stringify([]));
+                  } catch (_e) { /* ignore */ }
+                }}
+              >
+                Clear cart
+              </button>
+            </div>
           </div>
         )}
     </div>
