@@ -57,6 +57,7 @@ export default function Cart() {
   }, []);
 
   const total = items.reduce((s, it) => s + it.price * it.qty, 0);
+  const count = items.reduce((s, it) => s + (it.qty || 0), 0);
 
   return (
     <div class="relative">
@@ -65,7 +66,7 @@ export default function Cart() {
         class="px-3 py-1 rounded bg-slate-700 text-slate-100"
         onClick={() => setOpen((o) => !o)}
       >
-        Cart ({items.length})
+        Cart ({count})
       </button>
 
       {open && (

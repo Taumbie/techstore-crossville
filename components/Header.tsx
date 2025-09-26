@@ -16,6 +16,7 @@ type Props = {
 
 // --- Component ----------------------------------------------------------
 import Cart from "../islands/Cart.tsx";
+import ThemeToggle from "../islands/ThemeToggle.tsx";
 
 export default function Header({ navItems = [] }: Props) {
   // default navigation when none is provided
@@ -32,7 +33,23 @@ export default function Header({ navItems = [] }: Props) {
         <div class="flex items-center gap-4">
           <a href="/" class="flex items-center gap-3 no-underline">
             <div class="w-8 h-8 bg-sky-500 rounded flex items-center justify-center font-bold text-white">
-              T
+              {/* cart icon (inline svg) */}
+              <svg
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <circle cx="10" cy="19" r="1" fill="currentColor" />
+                <circle cx="18" cy="19" r="1" fill="currentColor" />
+              </svg>
             </div>
             <span class="text-lg font-semibold text-slate-100">TechStore</span>
           </a>
@@ -52,6 +69,8 @@ export default function Header({ navItems = [] }: Props) {
 
         {/* Right-side utilities */}
         <div class="flex items-center gap-3">
+          {/* Theme toggle */}
+          <ThemeToggle />
           {/* Cart island (client-side) */}
           <Cart />
           <img src="/logo.svg" alt="logo" class="w-8 h-8 rounded-full" />
