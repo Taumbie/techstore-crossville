@@ -1,4 +1,5 @@
 import { useEffect, useState } from "preact/hooks";
+import { Button } from "../components/Button.tsx";
 
 type CartItem = {
   id: number;
@@ -61,13 +62,9 @@ export default function Cart() {
 
   return (
     <div class="relative">
-      <button
-        type="button"
-        class="px-3 py-1 rounded bg-slate-700 text-slate-100"
-        onClick={() => setOpen((o) => !o)}
-      >
+      <Button variant="muted" onClick={() => setOpen((o) => !o)}>
         Cart ({count})
-      </button>
+      </Button>
 
       {open && (
         <div class="absolute right-0 mt-2 w-80 bg-slate-800 border border-slate-700 p-3 rounded shadow-lg z-50">
@@ -90,9 +87,9 @@ export default function Cart() {
                       </div>
                     </div>
                     <div>
-                      <button
-                        type="button"
-                        class="text-xs px-2 py-1 bg-red-600 text-white rounded"
+                      <Button
+                        variant="danger"
+                        className="text-xs"
                         onClick={() => {
                           const next = items.filter((x) =>
                             x.id !== it.id
@@ -102,7 +99,7 @@ export default function Cart() {
                         }}
                       >
                         Remove
-                      </button>
+                      </Button>
                     </div>
                   </div>
                 ))}
@@ -110,22 +107,16 @@ export default function Cart() {
                   Total: <span class="product-price">${total.toFixed(2)}</span>
                 </div>
                 <div class="mt-2 flex gap-2">
-                  <a
-                    href="/checkout"
-                    class="px-3 py-2 bg-sky-500 text-white rounded"
-                  >
-                    Checkout
-                  </a>
-                  <button
-                    type="button"
-                    class="px-3 py-2 bg-red-600 text-white rounded"
+                  <Button href="/checkout" variant="primary">Checkout</Button>
+                  <Button
+                    variant="danger"
                     onClick={() => {
                       setItems([]);
                       writeCart([]);
                     }}
                   >
                     Clear cart
-                  </button>
+                  </Button>
                 </div>
               </div>
             )}

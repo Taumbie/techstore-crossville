@@ -1,4 +1,5 @@
 import { useEffect, useState } from "preact/hooks";
+import { Button } from "../components/Button.tsx";
 
 type CartItem = {
   id: number;
@@ -69,9 +70,9 @@ export default function CartPage() {
                   </div>
                 </div>
                 <div>
-                  <button
-                    type="button"
-                    class="px-2 py-1 bg-red-600 text-white rounded"
+                  <Button
+                    variant="danger"
+                    className="text-sm"
                     onClick={() => {
                       const next = items.filter((x) => x.id !== it.id);
                       setItems(next);
@@ -84,7 +85,7 @@ export default function CartPage() {
                     }}
                   >
                     Remove
-                  </button>
+                  </Button>
                 </div>
               </div>
             ))}
@@ -92,9 +93,8 @@ export default function CartPage() {
               Total: <span class="product-price">${total.toFixed(2)}</span>
             </div>
             <div class="flex gap-2 mt-2">
-              <button
-                type="button"
-                class="px-3 py-2 bg-red-600 text-white rounded"
+              <Button
+                variant="danger"
                 onClick={() => {
                   setItems([]);
                   try {
@@ -103,7 +103,7 @@ export default function CartPage() {
                 }}
               >
                 Clear cart
-              </button>
+              </Button>
             </div>
           </div>
         )}

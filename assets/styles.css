@@ -110,6 +110,32 @@ html.light .btn {
   color: #e6eef9; /* light hint on dark bg */
 }
 
+/* Make price appear as a subtle tag for better visual hierarchy */
+.product-price {
+  padding: 0.12rem 0.36rem;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* Light-mode price tag surface */
+html.light .product-price {
+  background-color: rgba(2, 6, 23, 0.03);
+  border: 1px solid rgba(2, 6, 23, 0.04);
+  color: #0b1220 !important;
+}
+
+/* Header contrast: make header slightly elevated in light mode */
+html.light header.bg-slate-800 {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  box-shadow: 0 2px 8px rgba(2, 6, 23, 0.04);
+  color: #0f172a !important;
+}
+
+html.light header .text-slate-100 {
+  color: #0f172a !important;
+}
+
 /* Borders for cards and panels */
 html.light .border-slate-700,
 html.light .border-slate-800 {

@@ -10,6 +10,7 @@ export interface ButtonProps {
   disabled?: boolean;
   className?: string;
   variant?: "primary" | "muted" | "danger" | "ghost";
+  href?: string;
   type?: "button" | "submit" | "reset";
 }
 
@@ -20,6 +21,7 @@ export function Button({
   disabled,
   className = "",
   variant = "primary",
+  href,
   type = "button",
 }: ButtonProps) {
   const base =
@@ -32,6 +34,20 @@ export function Button({
   };
 
   const cls = `${base} ${variants[variant] ?? variants.primary} ${className}`;
+
+  // If href is provided, render an anchor for navigation
+  if (href) {
+    return (
+      <a
+        id={id}
+        href={href}
+        class={cls}
+        onClick={(e) => onClick?.(e as unknown as Event)}
+      >
+        {children}
+      </a>
+    );
+  }
 
   return (
     <button
