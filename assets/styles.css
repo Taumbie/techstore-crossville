@@ -59,3 +59,54 @@ html.light .bg-sky-500 {
 html.light .bg-sky-500 svg {
   color: #075985 !important;
 }
+
+/* Panels, cards and surfaces in light mode */
+html.light .bg-slate-900,
+html.light .bg-slate-800,
+html.light .bg-slate-700 {
+  background-color: var(--panel) !important;
+  color: #0f172a !important;
+}
+
+/* Muted text and small labels */
+html.light .text-slate-400,
+html.light .text-slate-300,
+html.light .text-slate-200 {
+  color: #475569 !important; /* slightly muted slate */
+}
+
+/* Borders for cards and panels */
+html.light .border-slate-700,
+html.light .border-slate-800 {
+  border-color: rgba(15, 23, 42, 0.06) !important;
+}
+
+/* Buttons and accents */
+html.light .bg-sky-500,
+html.light .bg-sky-400 {
+  background-color: var(--primary) !important;
+  color: #072e4b !important;
+}
+
+html.light .bg-slate-700 {
+  background-color: #e6f2ff !important;
+}
+
+/* Make product cards stand out with a soft card background */
+html.light .product-card,
+html.light .card {
+  background-color: #fff8f2 !important;
+  border: 1px solid rgba(15, 23, 42, 0.04) !important;
+  box-shadow: 0 1px 2px rgba(2, 6, 23, 0.04) !important;
+}
+
+/* Ensure the header/nav adapts */
+html.light header.bg-slate-800 {
+  background-color: var(--bg) !important;
+  border-bottom-color: rgba(2, 6, 23, 0.06) !important;
+}
+
+/* Slightly darker panels for contrast */
+html.light .bg-slate-900-alt {
+  background-color: #f1f5f9 !important;
+}
