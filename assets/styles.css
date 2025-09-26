@@ -110,3 +110,36 @@ html.light header.bg-slate-800 {
 html.light .bg-slate-900-alt {
   background-color: #f1f5f9 !important;
 }
+
+/* Card hover interactions */
+.card {
+  transition:
+    transform 200ms ease,
+    box-shadow 200ms ease,
+    background-color 200ms ease;
+}
+.card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 8px 20px rgba(2, 6, 23, 0.12);
+}
+
+/* Dark theme subtle hover */
+.dark .card:hover,
+html:not(.light) .card:hover {
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.01),
+    rgba(255, 255, 255, 0.00)
+  );
+}
+
+/* Light mode card appearance */
+html.light .card {
+  background-color: #fffaf0 !important;
+  border-radius: 0.5rem;
+}
+html.light .card:hover {
+  background-color: #fff3e8 !important;
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.06);
+}

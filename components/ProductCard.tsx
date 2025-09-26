@@ -26,12 +26,12 @@ export default function ProductCard({ product }: Props) {
 
   return (
     <div class="block no-underline">
-      <div class="bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 rounded shadow p-4 flex flex-col hover:shadow-lg transition">
+      <div class="card bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 rounded shadow p-4 flex flex-col hover:shadow-lg transition-transform duration-200">
         <a href={`/products/${product.id}`} class="no-underline">
           <img
             src={product.image}
             alt={product.title}
-            class="h-40 object-contain mb-3"
+            class="h-40 object-contain mb-3 mx-auto"
           />
         </a>
         <h4 class="font-medium text-sm mb-1">{product.title}</h4>
