@@ -85,7 +85,8 @@ export default function Cart() {
                     <div class="flex-1 text-sm">
                       <div class="font-medium">{it.title}</div>
                       <div class="text-slate-400 text-xs">
-                        {it.qty} x ${it.price}
+                        {it.qty} x{" "}
+                        <span class="product-price">${it.price}</span>
                       </div>
                     </div>
                     <div>
@@ -105,7 +106,9 @@ export default function Cart() {
                     </div>
                   </div>
                 ))}
-                <div class="mt-2 font-semibold">Total: ${total.toFixed(2)}</div>
+                <div class="mt-2 font-semibold">
+                  Total: <span class="product-price">${total.toFixed(2)}</span>
+                </div>
                 <div class="mt-2 flex gap-2">
                   <a
                     href="/checkout"

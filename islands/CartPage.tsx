@@ -65,7 +65,7 @@ export default function CartPage() {
                 <div class="flex-1">
                   <div class="font-medium">{it.title}</div>
                   <div class="text-sm text-slate-500">
-                    {it.qty} x ${it.price}
+                    {it.qty} x <span class="product-price">${it.price}</span>
                   </div>
                 </div>
                 <div>
@@ -88,7 +88,9 @@ export default function CartPage() {
                 </div>
               </div>
             ))}
-            <div class="mt-4 font-semibold">Total: ${total.toFixed(2)}</div>
+            <div class="mt-4 font-semibold">
+              Total: <span class="product-price">${total.toFixed(2)}</span>
+            </div>
             <div class="flex gap-2 mt-2">
               <button
                 type="button"

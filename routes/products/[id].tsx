@@ -64,7 +64,9 @@ export default define.page(function ProductPage({ data }: { data: PageData }) {
             <h1 class="text-2xl font-bold mb-2">{product.title}</h1>
             <p class="text-slate-300 mb-4">{product.description}</p>
             <div class="flex items-center gap-4">
-              <span class="text-xl font-semibold">${product.price}</span>
+              <span class="text-xl font-semibold product-price">
+                ${product.price}
+              </span>
               <a href="/products" class="px-3 py-2 bg-slate-700 rounded">
                 Back
               </a>
