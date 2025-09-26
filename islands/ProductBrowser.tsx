@@ -94,9 +94,9 @@ export default function ProductBrowser() {
 
   return (
     <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-      <Card className="hidden md:block">
+      <div className="hidden md:block">
         <CategoryList categories={categories} onSelect={handleCategorySelect} />
-      </Card>
+      </div>
 
       <section class="md:col-span-3 space-y-4">
         <Card>
