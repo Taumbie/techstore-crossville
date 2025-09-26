@@ -22,3 +22,40 @@
   border-radius: 0.75rem;
   box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.06);
 }
+
+/* Light mode (pastel-friendly) activated by adding `light` to <html> */
+html.light {
+  --bg: #f8fafc; /* slate-50 */
+  --panel: #fffaf0; /* warm pastel */
+  --muted: #6b7280; /* slate-500 */
+  --primary: #93c5fd; /* sky-300 */
+  --accent: #fde68a; /* yellow-300 */
+  color-scheme: light;
+  background-color: var(--bg);
+  color: #0f172a; /* slate-900 */
+}
+
+html.light .panel-pattern {
+  background-color: var(--panel);
+  background-image: none;
+  box-shadow: 0 1px 0 rgba(15, 23, 42, 0.03);
+}
+
+html.light .bg-slate-800 {
+  background-color: var(--panel) !important;
+}
+html.light .text-slate-100 {
+  color: #0f172a !important;
+}
+html.light .text-slate-300 {
+  color: var(--muted) !important;
+}
+html.light .bg-slate-700 {
+  background-color: var(--primary) !important;
+}
+html.light .bg-sky-500 {
+  background-color: var(--primary) !important;
+}
+html.light .bg-sky-500 svg {
+  color: #075985 !important;
+}
