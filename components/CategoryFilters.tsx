@@ -36,6 +36,8 @@ const FILTERS: Record<
   ],
 };
 
+import { Button } from "./Button.tsx";
+
 export default function CategoryFilters({ category, value, onChange }: Props) {
   const key = category ?? "all";
   const opts = FILTERS[key] ?? [
@@ -52,18 +54,14 @@ export default function CategoryFilters({ category, value, onChange }: Props) {
       </div>
       <div class="flex gap-2 flex-wrap">
         {opts.map((o) => (
-          <button
-            type="button"
+          <Button
             key={o.key}
-            class={`px-3 py-1 rounded ${
-              value === o.key
-                ? "bg-sky-500 text-white"
-                : "bg-slate-700 text-slate-200"
-            }`}
+            variant={value === o.key ? "primary" : "muted"}
             onClick={() => onChange(o.key === "all" ? null : o.key)}
+            className="px-3 py-1"
           >
             {o.label}
-          </button>
+          </Button>
         ))}
       </div>
     </div>

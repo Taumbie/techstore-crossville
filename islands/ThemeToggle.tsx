@@ -1,4 +1,5 @@
 import { useEffect, useState } from "preact/hooks";
+import { Button } from "../components/Button.tsx";
 
 export default function ThemeToggle() {
   const [light, setLight] = useState(false);
@@ -24,13 +25,13 @@ export default function ThemeToggle() {
   }, [light]);
 
   return (
-    <button
-      type="button"
+    <Button
       aria-label="Toggle light mode"
-      class="px-2 py-1 rounded bg-slate-700 text-slate-100"
+      className="px-2 py-1"
+      variant="ghost"
       onClick={() => setLight((v) => !v)}
     >
       {light ? "🌞" : "🌙"}
-    </button>
+    </Button>
   );
 }

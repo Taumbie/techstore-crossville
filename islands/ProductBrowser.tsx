@@ -8,6 +8,7 @@ import CategoryList from "../components/CategoryList.tsx";
 import FiltersBar from "../components/FiltersBar.tsx";
 import CategoryFilters from "../components/CategoryFilters.tsx";
 import ProductGrid from "../components/ProductGrid.tsx";
+import Card from "../components/Card.tsx";
 
 // ==========================
 // Component: ProductBrowser
@@ -93,23 +94,29 @@ export default function ProductBrowser() {
 
   return (
     <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-      <CategoryList categories={categories} onSelect={handleCategorySelect} />
+      <Card className="hidden md:block">
+        <CategoryList categories={categories} onSelect={handleCategorySelect} />
+      </Card>
 
-      <section class="md:col-span-3">
-        <CategoryFilters
-          category={category.value}
-          value={categoryFilter}
-          onChange={setCategoryFilter}
-        />
-        <FiltersBar
-          query={q.value}
-          onQueryChange={handleQueryChange}
-          onApply={loadProducts}
-        />
+      <section class="md:col-span-3 space-y-4">
+        <Card>
+          <CategoryFilters
+            category={category.value}
+            value={categoryFilter}
+            onChange={setCategoryFilter}
+          />
+          <FiltersBar
+            query={q.value}
+            onQueryChange={handleQueryChange}
+            onApply={loadProducts}
+          />
+        </Card>
 
-        {loading
-          ? <div class="text-sm text-slate-300">Loading...</div>
-          : <ProductGrid products={filteredProducts} />}
+        <Card>
+          {loading
+            ? <div class="text-sm text-slate-300">Loading...</div>
+            : <ProductGrid products={filteredProducts} />}
+        </Card>
       </section>
     </div>
   );
