@@ -7,6 +7,8 @@ type Props = {
   onApply: () => void;
 };
 
+import { Button } from "./Button.tsx";
+
 // ==========================
 // Component: FiltersBar
 // Simple search bar and action button used above the product grid
@@ -23,13 +25,7 @@ export default function FiltersBar({ query, onQueryChange, onApply }: Props) {
           onQueryChange(t.value);
         }}
       />
-      <button
-        type="button"
-        class="px-3 py-2 bg-sky-500 text-white rounded"
-        onClick={onApply}
-      >
-        Search
-      </button>
+      <Button variant="primary" onClick={onApply}>Search</Button>
     </div>
   );
 }

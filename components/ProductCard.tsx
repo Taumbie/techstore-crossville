@@ -2,6 +2,7 @@
 // Imports
 // ==========================
 import type { Product } from "./types.ts";
+import { Button } from "./Button.tsx";
 
 // ==========================
 // Types
@@ -39,14 +40,8 @@ export default function ProductCard({ product }: Props) {
           {product.description.slice(0, 80)}...
         </p>
         <div class="mt-3 flex items-center justify-between">
-          <span class="font-semibold">${product.price}</span>
-          <button
-            type="button"
-            class="px-2 py-1 text-sm bg-sky-500 text-white rounded"
-            onClick={addToCart}
-          >
-            Add
-          </button>
+          <span class="font-semibold product-price">${product.price}</span>
+          <Button variant="primary" onClick={addToCart}>Add</Button>
         </div>
       </div>
     </div>
