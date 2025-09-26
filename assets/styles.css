@@ -63,6 +63,17 @@ html.light .text-slate-100 {
 html.light .text-slate-300 {
   color: var(--muted) !important;
 }
+
+/* Ghost button hover clarity in light mode */
+html.light .btn:hover,
+html.light .btn:focus {
+  color: #072e4b !important;
+}
+
+/* Ensure category card keeps layout during loading */
+.category-list-min {
+  min-height: 220px;
+}
 html.light .bg-slate-700 {
   background-color: var(--primary) !important;
 }

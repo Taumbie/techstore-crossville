@@ -19,7 +19,7 @@ export default function CategoryList({ categories, _active, onSelect }: Props) {
     <aside class="md:col-span-1">
       <Card className="bg-slate-800 p-4">
         <h3 class="text-lg font-semibold mb-3">Categories</h3>
-        <ul class="space-y-2 text-sm text-slate-200">
+        <ul class="space-y-2 text-sm text-slate-200" style="min-height: 220px;">
           <li key="all">
             <Button
               variant="ghost"
@@ -33,7 +33,7 @@ export default function CategoryList({ categories, _active, onSelect }: Props) {
             <li key={c}>
               <Button
                 variant="ghost"
-                className="w-full text-left"
+                className="w-full text-left font-medium text-base"
                 onClick={() => onSelect(c)}
               >
                 {c}
