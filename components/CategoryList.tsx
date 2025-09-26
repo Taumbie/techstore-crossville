@@ -17,9 +17,9 @@ type Props = {
 export default function CategoryList({ categories, _active, onSelect }: Props) {
   return (
     <aside class="md:col-span-1">
-      <Card className="bg-slate-800 p-4">
+      <Card className="bg-slate-800 p-4 category-list-min">
         <h3 class="text-lg font-semibold mb-3">Categories</h3>
-        <ul class="space-y-2 text-sm text-slate-200" style="min-height: 220px;">
+        <ul class="space-y-2 text-sm text-slate-200">
           <li key="all">
             <Button
               variant="ghost"
